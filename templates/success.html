@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Form</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-</head>
+{% include 'parts/head.html' %}
+<!--hero header-->
+<section class="bg-image bg-image-3 py-7 py-md-0 bg-hero" id="home">
+    <div class="container">
+        <div class="row vh-md-100">
+            <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+                <h1 class="heading-black text-capitalize">Success!</h1>
+                <p class="lead py-3">We'll contact you via Discord! Make sure that you are able to receive Friend Requests!</p>
+                <p class="lead py-3">You can now close this tab, or go <a href="/">back to the Homepage</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'parts/tail.html' %}
 
-<body><center>
-  <h1>Success, we'll contact you via Discord! Make sure that you are able to recieve Friend Requests!</h1>
-  <p>You can now close this tab, or go <a href="/">back to the Homepage</a></p>
-</center></body>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-  head, body {
-    margin: 0;
-    padding: 0;
-    color: white;
-    background-color: #111622;
-    font-family: 'Roboto', sans-serif;
-  }
-  center {
-    top: 40%;
-    position: absolute;
-    height: 50%;
-    width: 100%;
-  }
-</style>
