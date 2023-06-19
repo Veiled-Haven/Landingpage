@@ -1,46 +1,12 @@
 {% include 'parts/head.html' %}
-
-<!--navigation-->
-<section class="smart-scroll">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <a class="navbar-brand heading-black" href="#">
-                <img src="img/vh_logo_small.png">
-            </a>
-            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
-                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span data-feather="grid"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#screenshots">Screenshots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#faq">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#rules">Rules</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#application">Application Form</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</section>
+{% include 'parts/navigation.html' %}
 
 <!--hero header-->
 <section class="bg-image bg-image-1 py-7 py-md-0 bg-hero" id="home">
     <div class="container">
         <div class="row vh-md-100">
             <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
-                <h1 class="heading-black text-capitalize"><img src="img/vh_logo_small.png"></h1>
+                <h1 class="heading-black text-capitalize"><img src="{{ url_for('static', filename="img/vh_logo_small.png") }}"></h1>
                 <p class="lead py-3">Welcome to Veiled Haven, a Minecraft Server Project with a focus on keeping a vanilla gameplay experience and maintaining a mature community!</p>
             </div>
         </div>
@@ -58,8 +24,8 @@
         <div class="row mt-5">
             <div class="col-md-4">
                 <div class="card">
-                    <a href="img/screenshot-2.jpg">
-                        <img class="card-img-top img-raised" src="img/screenshot-2.jpg" alt="Blog 1">
+                    <a href="{{ url_for('static', filename="img/screenshot-2.jpg") }}">
+                        <img class="card-img-top img-raised" src="{{ url_for('static', filename="img/screenshot-2.jpg") }}" alt="Blog 1">
                     </a>
                     <div class="card-body">
                         <p class="text-muted small-xl mb-2">Apr 18, 2023 - A player build.</p>
@@ -68,8 +34,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <a href="img/screenshot-townsquare.jpg">
-                        <img class="card-img-top img-raised" src="img/screenshot-townsquare.jpg" alt="Blog 1">
+                    <a href="{{ url_for('static', filename="img/screenshot-townsquare.jpg") }}">
+                        <img class="card-img-top img-raised" src="{{ url_for('static', filename="img/screenshot-townsquare.jpg") }}" alt="Blog 1">
                     </a>
                     <div class="card-body">
                         <p class="text-muted small-xl mb-2">Apr 18, 2023 - Townsquare.</p>
@@ -78,8 +44,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <a href="img/screenshot-dragonfight.jpg">
-                        <img class="card-img-top img-raised" src="img/screenshot-dragonfight.jpg" alt="Blog 1">
+                    <a href="{{ url_for('static', filename="img/screenshot-dragonfight.jpg") }}">
+                        <img class="card-img-top img-raised" src="{{ url_for('static', filename="img/screenshot-dragonfight.jpg") }}" alt="Blog 1">
                     </a>
                     <div class="card-body">
                         <p class="text-muted small-xl mb-2">Apr 21, 2023 - Dragonfight.</p>
