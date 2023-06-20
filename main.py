@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
@@ -39,8 +39,13 @@ def home():
         webhook.add_embed(embed)
         if webhook_url != "":
             response = webhook.execute()
-        return render_template("success.html", form=form)
+        return redirect(location=url_for("success"),code=302)
     else:
         return render_template("index.html", form=form,anchor='application')
+
+
+@app.route("/success")
+def success():
+    return render_template("success.html")
 
 app.run(host='0.0.0.0', port=5000)
