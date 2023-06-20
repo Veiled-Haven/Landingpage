@@ -2,7 +2,7 @@
 <section class="smart-scroll">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark">
-            <a class="navbar-brand heading-black" href="#">
+            <a class="navbar-brand heading-black" href="/">
                 <img src="{{ url_for('static', filename="img/vh_logo_small.png") }}">
             </a>
             <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
@@ -11,6 +11,7 @@
                 <span data-feather="grid"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
+                {% if request.endpoint == "home" %}
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#home">Home</a>
@@ -28,6 +29,7 @@
                         <a class="nav-link page-scroll" href="#application">Application Form</a>
                     </li>
                 </ul>
+                {% endif %}
             </div>
         </nav>
     </div>
