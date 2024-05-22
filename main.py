@@ -15,7 +15,7 @@ bootstrap = Bootstrap4(app)
 
 class ApplicationForm(FlaskForm):
     minecraft_username = StringField("What is your Minecraft username?*",description="We need this information to eventually Whitelist you on the Server!", validators=[DataRequired()])
-    discord_username = StringField("What is your Discord username?*", description="Please also include your Tag (username#1234), and make sure you accept Friend Requests, Discord is where we will get in touch with you!", validators=[DataRequired()])
+    discord_username = StringField("What is your Discord username?*", description="<b>Please make sure you accept Friend Requests</b>, Discord is where we will get in touch with you!", validators=[DataRequired()])
     why_would_you_like_to_join = TextAreaField("Why would you like to join?*", validators=[DataRequired()])
     favorite_aspect = TextAreaField("What is your favorite aspect of playing Minecraft online?*", validators=[DataRequired()])
     how_long_have_you_played = TextAreaField("How long have you been playing Minecraft?", validators=[DataRequired()])
