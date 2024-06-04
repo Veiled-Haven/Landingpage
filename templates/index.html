@@ -12,7 +12,7 @@
         </div>
     </div>
 </section>
-
+{#% disable Screenshot section
 <!--screenshot section-->
 <section class="py-7 section-angle top-left bottom-left" id="screenshots">
     <div class="container">
@@ -54,16 +54,16 @@
             </div>
 
         </div>
-{#% disable "View all posts" button as we dont have a galery yet!
+<!--
         <div class="row mt-6">
             <div class="col-md-6 mx-auto text-center">
                 <a href="#" class="btn btn-primary">View all posts</a>
             </div>
         </div>
-%#}
+-->
     </div>
 </section>
-
+%#}
 <!--faq section-->
 <section class="py-7 bg-image bg-image-2  bg-hero" id="faq">
     <div class="container">
@@ -200,5 +200,11 @@
 <div class="scroll-top">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
 </div>
-
+{% if anchor %}
+<script>
+    document.getElementById('{{ anchor }}').scrollIntoView();
+    // or
+    document.location.hash = '#' + '{{ anchor }}';
+</script>
+{% endif %}
 {% include 'parts/tail.html' %}
