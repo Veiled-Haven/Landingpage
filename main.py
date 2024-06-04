@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, TextAreaField, BooleanField, SubmitField
+from wtforms import StringField, IntegerField, TextAreaField, BooleanField, SubmitField, ValidationError
 from wtforms.validators import DataRequired, NumberRange
 
 webhook_url = os.environ.get('DISCORD_WEBHOOK_URL', "")
@@ -13,16 +13,27 @@ SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 bootstrap = Bootstrap4(app)
 
+class ValidateMath(object):
+    def __init__(self, message=None):
+        self.message = message
+
+    def __call__(self, form, field):
+        if field.data != 13:
+            raise ValidationError(self.message)
+
+
 class ApplicationForm(FlaskForm):
     minecraft_username = StringField("What is your Minecraft username?*",description="We need this information to eventually Whitelist you on the Server!", validators=[DataRequired()])
     discord_username = StringField("What is your Discord username?*", description="<b>Please make sure you accept Friend Requests</b>, Discord is where we will get in touch with you!", validators=[DataRequired()])
     why_would_you_like_to_join = TextAreaField("Why would you like to join?*", validators=[DataRequired()])
     favorite_aspect = TextAreaField("What is your favorite aspect of playing Minecraft online?*", validators=[DataRequired()])
-    how_long_have_you_played = TextAreaField("How long have you been playing Minecraft?", validators=[DataRequired()])
-    have_you_been_part_of_an_smp = TextAreaField("Have you been part of any SMP's before, if so why did you leave?", validators=[DataRequired()])
+    how_long_have_you_played = TextAreaField("How long have you been playing Minecraft?")
+    have_you_been_part_of_an_smp = TextAreaField("Have you been part of any SMP's before, if so why did you leave?")
     age = IntegerField("What is your age?*", validators=[DataRequired(),NumberRange(min=16,max=200,message="Sorry, you are to Young to play with us :(")])
-    rules_accepted = BooleanField("Do you accept the Rules?", validators=[DataRequired()])
+    math = IntegerField("What is Five plus Eight?*",validators=[DataRequired(),ValidateMath(message="Are you sure your Math is correct?")])
+    rules_accepted = BooleanField("Do you accept the Rules?*", validators=[DataRequired()])
     submit = SubmitField()
+
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -40,8 +51,10 @@ def home():
         if webhook_url != "":
             response = webhook.execute()
         return redirect(location=url_for("success"),code=302)
+    elif form.errors:
+        return render_template("index.html", form=form, anchor=list(form.errors.keys())[0])
     else:
-        return render_template("index.html", form=form,anchor='application')
+        return render_template("index.html", form=form)
 
 
 @app.route("/success")
