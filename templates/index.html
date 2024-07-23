@@ -98,7 +98,7 @@
                     </div>
                     <div class="col-md-6 mb-5">
                         <h6>Is there any Pay to Win crap on this server?</h6>
-                        <p>Absolutely not! Our server does not have any Pay to Win elements that provide any advantages.</p>
+                        <p>Absolutely not! Our server does not have any Pay to Win elements!</p>
                     </div>
                 </div>
             </div>
@@ -144,18 +144,14 @@
     </div>
 </section>
 
-{% from 'bootstrap5/form.html' import render_form %}
 <!--application section-->
 <section class="py-7 bg-dark section-angle top-left bottom-left" id="application">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mx-auto text-center">
-                <h2 class="heading-black">Application Form!</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mx-auto">
-                {{ render_form(form) }}
+            <div class="col-md-10 mx-auto text-center">
+                <h2 class="heading-black">Application!</h2>
+                <p>Ready to dive into the adventure of Veiled Haven? Join our Discord and apply now to start your journey!</p>
+                <a href="https://discord.com/invite/XBsWNw7zQu" class="btn btn-primary"><i class="fa fa-brands fa-discord"></i> Join Veiled Haven on Discord</a>
             </div>
         </div>
     </div>
@@ -169,24 +165,17 @@
                 <h5>Veiled Haven</h5>
                 <p class="text-muted">A Minecraft Server Project with a focus on keeping a vanilla gameplay experience and maintaining an adult community!</p>
                 <ul class="list-inline social social-sm">
-{#% disable discord social icon as we are invite only!
                     <li class="list-inline-item">
-                        <a href=""><i class="fa fa-brands fa-discord"></i></a>
+                        <a href="https://discord.com/invite/XBsWNw7zQu"><i class="fa fa-brands fa-discord"></i></a>
                     </li>
-%#}
                 </ul>
             </div>
-{#% disable link section for now
             <div class="col-sm-2">
                 <h5>Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="https://map.veiled-haven.net">DynMap</a></li>
-                </ul>
-                <ul class="list-unstyled">
-                    <li><a href="https://admin.veiled-haven.net">Admin</a></li>
+                    <li><a href="https://map.veiled-haven.net">Map</a></li>
                 </ul>
             </div>
-%#}
         </div>
         <div class="row mt-5">
             <div class="col-12 text-muted text-center small-xl">

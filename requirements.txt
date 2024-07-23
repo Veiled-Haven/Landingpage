@@ -1,4 +1,1 @@
 flask
-discord-webhook
-bootstrap-flask
-flask-wtf
