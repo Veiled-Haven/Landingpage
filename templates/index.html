@@ -100,6 +100,119 @@
                         <h6>Is there any Pay to Win crap on this server?</h6>
                         <p>Absolutely not! Our server does not have any Pay to Win elements!</p>
                     </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>What modifications does Veiled Haven use?</h6>
+                        <p>To get a list of the modification, <a class="page-scroll" id="toggleMods" href=""> click here!</a></p>
+                    </div>
+                    <script>
+                        document.getElementById('toggleMods').addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent default link behavior
+
+                            // Get the mods section
+                            const modsSection = document.getElementById('mods');
+
+                            // Toggle the collapse class
+                            modsSection.classList.toggle('collapse');
+
+                            // Determine the anchor to scroll to
+                            const anchor = modsSection.classList.contains('collapse') ? 'faq' : 'mods';
+
+                            // Scroll to the appropriate section
+                            document.getElementById(anchor).scrollIntoView({ behavior: 'smooth' });
+                            // Alternatively, update the URL hash
+                            // document.location.hash = '#' + anchor;
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--mods section-->
+<section class="py-7 bg-dark section-angle top-left bottom-left collapse" id="mods">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Modifications on Veiled Haven</h2>
+                <p class="text-muted lead">Please note, that these Modifications are all Server Side, you can play without any modifications installed.</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-10 mx-auto">
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <h6>Quality of Life</h6>
+                        <ul>
+                            <li><a href="https://modrinth.com/mod/convenient-mobgriefing">Convenient Mob Griefing</a></li>
+                            <li><a href="https://modrinth.com/mod/cycle-paintings">Cycle Paintings</a></li>
+                            <li><a href="https://modrinth.com/mod/dismount-entity">Dismount Entity</a></li>
+                            <li><a href="https://modrinth.com/mod/double-doors">Double Doors</a></li>
+                            <li><a href="https://modrinth.com/mod/jade">Jade</a></li>
+                            <li><a href="https://modrinth.com/mod/leaves-us-in-peace">Leaves Us In Peace</a></li>
+                            <li><a href="https://modrinth.com/mod/replanting-crops">Replanting Crops</a></li>
+                            <li><a href="https://modrinth.com/mod/afkplus">AFKPlus</a></li>
+                            <li><a href="https://modrinth.com/mod/babies-forever">Babies Forever</a></li>
+                            <li><a href="https://vanillatweaks.net/picker/datapacks/">SilenceMob</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Management</h6>
+                        <ul>
+                            <li><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">Carpet</a></li>
+                            <li><a href="https://modrinth.com/plugin/chunky">Chunky</a></li>
+                            <li><a href="https://modrinth.com/plugin/chunkyborder">Chunky Border</a></li>
+                            <li><a href="https://modrinth.com/mod/ledger">Ledger</a></li>
+                            <li><a href="https://modrinth.com/mod/luckperms">Luckperms</a></li>
+                            <li><a href="https://modrinth.com/mod/spark">Spark</a></li>
+                            <li><a href="https://www.curseforge.com/minecraft/mc-mods/essential-permissions">Essential Permissions</a></li>
+                            <li><a href="https://modrinth.com/mod/invview">InvView</a></li>
+                            <li><a href="https://www.curseforge.com/minecraft/mc-mods/worldedit">World Edit</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Optimization</h6>
+                        <ul>
+                            <li><a href="https://modrinth.com/mod/adaptiveview">AdaptiveView</a></li>
+                            <li><a href="https://modrinth.com/mod/ferrite-core">FerriteCore</a></li>
+                            <li><a href="https://modrinth.com/mod/lithium">Lithium</a></li>
+                            <li><a href="https://modrinth.com/mod/modernfix">ModernFix</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Decoration</h6>
+                        <ul>
+                            <li><a href="https://modrinth.com/mod/just-mob-heads">Just Mob Heads</a></li>
+                            <li><a href="https://modrinth.com/mod/just-player-heads">Just Player Heads</a></li>
+                            <li><a href="https://vanillatweaks.net/picker/datapacks/">Armor Statues</a></li>
+                            <li><a href="https://modrinth.com/datapack/mvp">More Vanilla Paintings</a></li>
+                            <li><a href="https://vanillatweaks.net/picker/datapacks/">Wandering Trades</a></li>
+                            <li><a href="https://modrinth.com/mod/styled-chat">Styled Chat</a></li>
+                            <li><a href="https://modrinth.com/mod/styledplayerlist">Styled Playerlist</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Fun</h6>
+                        <ul>
+                            <li><a href="https://modrinth.com/mod/audioplayer">Audio Player</a></li>
+                            <li><a href="https://modrinth.com/plugin/simple-voice-chat">Simple Voice Chat</a></li>
+                            <li><a href="https://modrinth.com/mod/takeaseat">TakeASeat</a></li>
+                            <li><a href="https://modrinth.com/mod/image2map">Image2Map</a></li>
+                            <li><a href="https://modrinth.com/datapack/blazeandcaves-advancements-pack">BlazeandCave's Advancements</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Miscellaneous</h6>
+                        <ul>
+                            <li><a href="https://modrinth.com/mod/discord-mc-chat">Discord MC Chat</a></li>
+                            <li><a href="https://modrinth.com/plugin/squaremap">Squaremap</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Essential</h6>
+                        <ul>
+                            <li><a href="https://modrinth.com/mod/no-chat-reports">No Chat Reports</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,6 +226,7 @@
 %#}
     </div>
 </section>
+
 
 
 <!--rules section-->
