@@ -4140,6 +4140,9 @@ button.close {
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 800px; } }
+@media (min-width: 992px) {
+  .modal-xxl {
+    max-width: 1920px; } }
 
 .tooltip {
   position: absolute;
